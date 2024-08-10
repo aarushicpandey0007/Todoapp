@@ -1,0 +1,154 @@
+body {
+  background-image: url("https://wallpapercave.com/wp/wp2721329.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Overlay */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Container and content styling */
+.container {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideUp 0.8s ease-out; /* Slide-up animation */
+}
+
+.content {
+  width: 600px;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+  border: 2px solid #ffffff; /* White border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.875rem;
+  margin-bottom: 16px;
+  color: black;
+  text-align: center; /* Center align the title */
+}
+
+.description {
+  color: black;
+  text-align: center; /* Center align the description */
+}
+
+/* Input styling */
+.input {
+  width: 100%; /* Full width of the parent container */
+  height: 40px; /* Set height to 40px */
+  padding: 0 16px; /* Add padding for better spacing inside the input */
+  border-radius: 20px; /* Rounded corners */
+  border: 2px solid #e5e7eb; /* Light gray border */
+  outline: none; /* Remove the default outline */
+  font-size: 16px; /* Adjust the font size */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's width and height */
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  transition: border-color 0.3s ease; /* Smooth transition for the border color */
+}
+
+/* Todo item styling */
+.todo-item {
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: space-between; /* Space between content and button */
+  align-items: center; /* Vertically center items */
+  padding: 7px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.button {
+  width: 100%; /* Full width to match the input and container width */
+  height: 40px; /* Same height as the input for consistency */
+  padding: 0 16px; /* Add padding for better spacing inside the button */
+  margin-top: 16px; /* Add some space above the button */
+  border-radius: 20px; /* Rounded corners to match the input */
+  border: none; /* Remove default border */
+  background-color: #16243a; /* Blue background */
+  color: #fff; /* White text */
+  font-size: 16px; /* Font size to match the input */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-sizing: border-box; /* Include padding in the element's width and height */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and slight scaling on hover */
+}
+
+/* Hover and active states */
+.button:hover {
+  background-color: #6d5656; /* Darker blue on hover */
+}
+
+.button:active {
+  transform: scale(0.98); /* Slightly shrink the button on click */
+}
+
+/* Remove button styling */
+.remove-button {
+  background-color: #16243a; 
+  color: #fff; /* White text */
+  border: none; /* Remove default border */
+  padding: 8px 12px; /* Add padding for better spacing */
+  border-radius: 9999px; /* Fully rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and scale */
+  font-size: 14px; /* Slightly smaller font size */
+  font-weight: bold; /* Bold text for better readability */
+  margin-left: auto; /* Pushes the button to the right */
+}
+
+/* Hover and active states */
+.remove-button:hover {
+  background-color: #6d5656; /* Darker red on hover */
+}
+
+.remove-button:active {
+  transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+/* Animation for sliding up the container */
+@keyframes slideUp {
+  from {
+    transform: translateY(100px); /* Start 100px below its final position */
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    transform: translateY(0); /* End at its final position */
+    opacity: 1; /* End fully visible */
+  }
+}
+
+
+
+/* Animation for sliding up the container */
+@keyframes slideUp {
+  from {
+    transform: translateY(100px); /* Start 100px below its final position */
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    transform: translateY(0); /* End at its final position */
+    opacity: 1; /* End fully visible */
+  }
+}
+
+
