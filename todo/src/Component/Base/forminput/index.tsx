@@ -1,18 +1,18 @@
-// src/components/Base/FormInput/index.tsx
 import React, { useState } from 'react';
 
 interface FormInputProps {
-  addTodo: (todo: string) => void;
+  addTodo: (todo: string, priority: string) => void;
 }
 
 const FormInput: React.FC<FormInputProps> = ({ addTodo }) => {
   const [todo, setTodo] = useState("");
+  const [priority, setPriority] = useState("low");
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (todo.length > 0) {
-      addTodo(todo);
-      setTodo(""); // Clear the input after submission
+      addTodo(todo, priority);
+      setTodo(""); 
     }
   };
 
@@ -26,6 +26,29 @@ const FormInput: React.FC<FormInputProps> = ({ addTodo }) => {
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
         />
+        <div className="priority-buttons">
+          <button
+            type="button"
+            className={`button-high ${priority === "high" ? "active" : ""}`}
+            onClick={() => setPriority("high")}
+          >
+            High
+          </button>
+          <button
+            type="button"
+            className={`button-medium ${priority === "medium" ? "active" : ""}`}
+            onClick={() => setPriority("medium")}
+          >
+            Medium
+          </button>
+          <button
+            type="button"
+            className={`button-low ${priority === "low" ? "active" : ""}`}
+            onClick={() => setPriority("low")}
+          >
+            Low
+          </button>
+        </div>
         <button type="submit" className="button">
           Add Todo
         </button>
@@ -33,5 +56,7 @@ const FormInput: React.FC<FormInputProps> = ({ addTodo }) => {
     </form>
   );
 };
+
+
 
 export default FormInput;

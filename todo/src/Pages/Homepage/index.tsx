@@ -1,24 +1,22 @@
-// src/index.tsx
-
-
-import FormInput from '../../Component/Base/forminput';
+import React from 'react';
 import { todoStore } from '../../State/TodoStore';
-
+import TodoList from '../../Component/Base/Todolist';
+import FormInput from '../../Component/Base/forminput';
 
 function Index() {
-  const todos = todoStore((state) => state.todos);
   const todoState = todoStore();
 
   const randomId = (): number => {
     const min = 1000;
     const max = 9999;
-    return Math.round(Math.random() * (max - min) + 1) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  const addTodo = (todo: string) => {
+  const addTodo = (todo: string, priority: 'high' | 'medium' | 'low') => {
     todoState.addTodo({
       id: randomId(),
       todo,
+      priority,  
       isDone: false,
     });
   };
@@ -29,25 +27,11 @@ function Index() {
         <h1 className="title">TODO APP</h1>
         <p className="description">Add your daily task</p>
         <FormInput addTodo={addTodo} />
-        <div className="todo-list">
-          {todos.map((t) => (
-            <div key={t.id} className="todo-item">
-              <span>{t.todo}</span>
-              <button
-                className="remove-button"
-                onClick={() => todoState.removeTodo(t.id)}
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-        </div>
+        <TodoList />
       </div>
     </div>
   );
 }
 
 export default Index;
-
-
 

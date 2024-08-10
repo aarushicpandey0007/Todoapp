@@ -1,10 +1,30 @@
+.prompt-thin { font-family: "Prompt", sans-serif; font-weight: 100; font-style: normal; }
+.prompt-extralight { font-family: "Prompt", sans-serif; font-weight: 200; font-style: normal; }
+.prompt-light { font-family: "Prompt", sans-serif; font-weight: 300; font-style: normal; }
+.prompt-regular { font-family: "Prompt", sans-serif; font-weight: 400; font-style: normal; }
+.prompt-medium { font-family: "Prompt", sans-serif; font-weight: 500; font-style: normal; }
+.prompt-semibold { font-family: "Prompt", sans-serif; font-weight: 600; font-style: normal; }
+.prompt-bold { font-family: "Prompt", sans-serif; font-weight: 700; font-style: normal; }
+.prompt-extrabold { font-family: "Prompt", sans-serif; font-weight: 800; font-style: normal; }
+.prompt-black { font-family: "Prompt", sans-serif; font-weight: 900; font-style: normal; }
+.prompt-thin-italic { font-family: "Prompt", sans-serif; font-weight: 100; font-style: italic; }
+.prompt-extralight-italic { font-family: "Prompt", sans-serif; font-weight: 200; font-style: italic; }
+.prompt-light-italic { font-family: "Prompt", sans-serif; font-weight: 300; font-style: italic; }
+.prompt-regular-italic { font-family: "Prompt", sans-serif; font-weight: 400; font-style: italic; }
+.prompt-medium-italic { font-family: "Prompt", sans-serif; font-weight: 500; font-style: italic; }
+.prompt-semibold-italic { font-family: "Prompt", sans-serif; font-weight: 600; font-style: italic; }
+.prompt-bold-italic { font-family: "Prompt", sans-serif; font-weight: 700; font-style: italic; }
+.prompt-extrabold-italic { font-family: "Prompt", sans-serif; font-weight: 800; font-style: italic; }
+.prompt-black-italic { font-family: "Prompt", sans-serif; font-weight: 900; font-style: italic; }
+
 body {
   background-image: url("https://wallpapercave.com/wp/wp2721329.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative; 
+  font-family: "Prompt", sans-serif; 
 }
 
-/* Overlay */
 body::before {
   content: '';
   position: absolute;
@@ -15,7 +35,6 @@ body::before {
   z-index: 1;
 }
 
-/* Container and content styling */
 .container {
   position: relative;
   z-index: 2;
@@ -24,16 +43,16 @@ body::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: slideUp 0.8s ease-out; /* Slide-up animation */
+  animation: slideUp 0.8s ease-out; 
 }
 
 .content {
   width: 600px;
   padding: 24px;
-  background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
-  border: 2px solid #ffffff; /* White border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: rgba(255, 255, 255, 0.2); 
+  border: 2px solid #ffffff;
+  border-radius: 8px; 
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .title {
@@ -41,34 +60,66 @@ body::before {
   font-size: 1.875rem;
   margin-bottom: 16px;
   color: black;
-  text-align: center; /* Center align the title */
+  text-align: center; 
 }
 
 .description {
   color: black;
-  text-align: center; /* Center align the description */
+  text-align: center; 
+} 
+
+.priority-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-/* Input styling */
+.priority-buttons button {
+  width: 30%;
+  padding: 8px 0;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.priority-buttons .button-high {
+  background-color: #f8d7da; 
+}
+
+.priority-buttons .button-medium {
+  background-color: #fff3cd; 
+}
+
+.priority-buttons .button-low {
+  background-color: #d4edda; 
+}
+
+.priority-buttons button.active {
+  opacity: 0.7; 
+  border: 2px solid #000; 
+}
+
 .input {
-  width: 100%; /* Full width of the parent container */
-  height: 40px; /* Set height to 40px */
-  padding: 0 16px; /* Add padding for better spacing inside the input */
-  border-radius: 20px; /* Rounded corners */
-  border: 2px solid #e5e7eb; /* Light gray border */
-  outline: none; /* Remove the default outline */
-  font-size: 16px; /* Adjust the font size */
-  box-sizing: border-box; /* Ensure padding and border are included in the element's width and height */
-  background-color: white; /* White background */
-  color: black; /* Black text */
-  transition: border-color 0.3s ease; /* Smooth transition for the border color */
+  width: 100%; 
+  height: 40px;
+  padding: 0 16px; 
+  border-radius: 20px; 
+  border: 2px solid #e5e7eb; 
+  outline: none; 
+  font-size: 16px;
+  box-sizing: border-box; 
+  background-color: white; 
+  color: black; 
+  transition: border-color 0.3s ease; 
 }
 
-/* Todo item styling */
 .todo-item {
-  display: flex; /* Use flexbox for horizontal layout */
-  justify-content: space-between; /* Space between content and button */
-  align-items: center; /* Vertically center items */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
   padding: 7px;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -77,78 +128,57 @@ body::before {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Button styling */
 .button {
-  width: 100%; /* Full width to match the input and container width */
-  height: 40px; /* Same height as the input for consistency */
-  padding: 0 16px; /* Add padding for better spacing inside the button */
-  margin-top: 16px; /* Add some space above the button */
-  border-radius: 20px; /* Rounded corners to match the input */
-  border: none; /* Remove default border */
-  background-color: #16243a; /* Blue background */
-  color: #fff; /* White text */
-  font-size: 16px; /* Font size to match the input */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-sizing: border-box; /* Include padding in the element's width and height */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and slight scaling on hover */
+  width: 100%; 
+  height: 40px; 
+  padding: 0 16px; 
+  margin-top: 16px; 
+  border-radius: 20px; 
+  border: none; 
+  background-color: #16243a; 
+  color: #fff; 
+  font-size: 16px; 
+  cursor: pointer; 
+  box-sizing: border-box; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
-/* Hover and active states */
 .button:hover {
-  background-color: #6d5656; /* Darker blue on hover */
+  background-color: #6d5656; 
 }
 
 .button:active {
-  transform: scale(0.98); /* Slightly shrink the button on click */
+  transform: scale(0.98); 
 }
 
-/* Remove button styling */
 .remove-button {
   background-color: #16243a; 
-  color: #fff; /* White text */
-  border: none; /* Remove default border */
-  padding: 8px 12px; /* Add padding for better spacing */
-  border-radius: 9999px; /* Fully rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and scale */
-  font-size: 14px; /* Slightly smaller font size */
-  font-weight: bold; /* Bold text for better readability */
-  margin-left: auto; /* Pushes the button to the right */
+  color: #fff; 
+  border: none; 
+  padding: 8px 12px; 
+  border-radius: 9999px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  font-size: 14px; 
+  font-weight: bold; 
+  margin-left: auto; 
 }
 
-/* Hover and active states */
 .remove-button:hover {
-  background-color: #6d5656; /* Darker red on hover */
+  background-color: #6d5656; 
 }
 
 .remove-button:active {
-  transform: scale(0.95); /* Slightly shrink the button on click */
+  transform: scale(0.95); 
 }
 
-/* Animation for sliding up the container */
 @keyframes slideUp {
   from {
-    transform: translateY(100px); /* Start 100px below its final position */
-    opacity: 0; /* Start invisible */
+    transform: translateY(100px); 
+    opacity: 0; 
   }
   to {
-    transform: translateY(0); /* End at its final position */
-    opacity: 1; /* End fully visible */
+    transform: translateY(0); 
+    opacity: 1; 
   }
 }
-
-
-
-/* Animation for sliding up the container */
-@keyframes slideUp {
-  from {
-    transform: translateY(100px); /* Start 100px below its final position */
-    opacity: 0; /* Start invisible */
-  }
-  to {
-    transform: translateY(0); /* End at its final position */
-    opacity: 1; /* End fully visible */
-  }
-}
-
-
